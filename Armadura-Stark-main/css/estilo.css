@@ -1,0 +1,305 @@
+/* ========================================= */
+/* ARQUIVO DE TEMA: STARK // ARMORY (Aplicado) */
+/* Estética: HUD & High-Tech                 */
+/* Versão: 3.1                               */
+/* ========================================= */
+
+/* --- FONTES E CONFIGURAÇÕES GLOBAIS --- */
+@font-face{
+   font-family: 'Mattone';
+   src: url('../fontes/Mattone-Regular.otf') format('opentype');
+   font-weight: normal;
+}
+
+:root {
+  --stark-red: #B80015;
+  --stark-gold: #FFD700;
+  --arc-blue: #00BFFF;
+  --background-dark: #0D0D0D;
+  --text-light: #EAEAEA;
+  --card-background: #141414;
+  --border-color: #333;
+}
+
+/* --- ANIMAÇÕES --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  font-family: 'Montserrat', 'Arial', sans-serif;
+}
+
+/* --- CABEÇALHO (HEADER) --- */
+.tit {
+  background-color: #000;
+  padding: 2rem 1rem;
+  border-bottom: 2px solid var(--stark-red);
+  text-align: center;
+}
+
+.titulo {
+  font-family: 'Mattone', serif;
+  font-size: 100px;
+  color: var(--stark-red);
+  background-image: none; /* Remove a imagem de fundo do texto original */
+  -webkit-background-clip: unset; /* Reseta as propriedades de clip */
+  background-clip: unset;
+}
+
+.sub img {
+  max-width: 500px; /* Ajuste para o banner */
+  height: auto;
+}
+
+/* --- BARRA DE NAVEGAÇÃO (NAVBAR) --- */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar ul { list-style: none; display: flex; gap: 2rem; }
+
+.navbar ul li a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 10px 15px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--stark-gold);
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s ease;
+}
+
+.navbar ul li a:hover { color: var(--stark-gold); }
+.navbar ul li a:hover::after { transform: scaleX(1); }
+
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.textointeiro {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.7;
+}
+
+.titulo-armaduras {
+  color: var(--stark-red);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.texto-armaduras {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+  opacity: 0.8;
+}
+
+/* --- CARDS DE ARMADURAS (ESTÉTICA AVANÇADA) --- */
+.lista-personagens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+}
+
+.card-armadura {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+.card-armadura::before, .card-armadura::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-color: var(--stark-gold);
+    border-style: solid;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+.card-armadura::before { top: 10px; left: 10px; border-width: 2px 0 0 2px; }
+.card-armadura::after { bottom: 10px; right: 10px; border-width: 0 2px 2px 0; }
+
+.card-armadura:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(184, 0, 21, 0.4);
+  border-color: var(--stark-red);
+}
+.card-armadura:hover::before, .card-armadura:hover::after {
+    opacity: 1;
+}
+
+.card-armadura img {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card-armadura:hover img {
+    transform: scale(1.05);
+}
+
+.conteudo-card h2 {
+  font-size: 1.5rem;
+  color: var(--stark-red);
+  margin-bottom: 10px;
+}
+
+.conteudo-card p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.preco {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: var(--arc-blue);
+  margin: 15px 0;
+  text-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+.botao-comprar {
+  background-color: var(--stark-gold);
+  color: #000;
+  border: none;
+  padding: 12px 25px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.botao-comprar:hover {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 0 15px var(--stark-gold);
+}
+
+
+/* --- RODAPÉ (FOOTER) --- */
+.rodape {
+  background-color: #000;
+  color: var(--text-light);
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 2px solid var(--stark-red);
+  margin-top: 40px;
+}
+.logos-collab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+.logos-collab img {
+  height: 50px;
+  width: auto;
+}
+
+.collab-titulo {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-light);
+}
+
+.collab-titulo span { color: var(--stark-gold); font-weight: bold; }
+.direitos { font-size: 0.9rem; color: #888; }
+
+.titulo {
+  font-size: 135px;
+  font-family: 'Mattone', serif;
+  font-weight: bold;
+  background-image: url("../img/peito.jpg");
+  background-size: 700px auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: transparent;
+  background-clip: text;
+  text-align: center;
+  -webkit-background-clip: text;
+}
+.botao-comprar {
+  background-color: var(--stark-gold);
+  color: #000;
+  border: none;
+  padding: 12px 25px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.botao-comprar:hover {
+  background-color: #fff;
+}.card-armadura .preco {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: var(--arc-blue);
+  margin-bottom: 20px;
+}
+img {
+  text-align: center;
+}
+

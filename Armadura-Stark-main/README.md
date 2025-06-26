@@ -1,0 +1,3 @@
+# Stark
+Site de vendas de armaduras Marks
+Tony é um cliente que não tem restrições com relação ao seu custo: “cobre o que quiser, mas faça bem feito” foi a frase que soltou ao procurar os desenvolvedores para fazer seu site. Tony cansou de vender armas e agora quer comercializar suas armaduras, porém todas elas só virão com a função de voar e remover reflexo de fotos. O site deve ter a história de Tony Stark (pois ele é um pouco vaidoso) e como descobriu sua tecnologia. O site deve ter uma página com suas armaduras mais clássicas e outra com suas novas armaduras a venda. Por fim, o site deve ter uma página com um formulário para encomendas. 
