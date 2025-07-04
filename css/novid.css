@@ -1,0 +1,245 @@
+/* Tipografia e Reset */
+@font-face {
+    font-family: 'Mattone';
+    src: url('../fontes/Mattone-Regular.otf') format('opentype');
+    font-weight: normal;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #0D0D0D;
+    color: #EAEAEA;
+    font-family: 'Montserrat', 'Arial', sans-serif;
+  }
+  
+  /* Header */
+  .tit {
+    background-color: #000;
+    padding: 32px 16px;
+    border-bottom: 2px solid #00BFFF;
+    text-align: center;
+  }
+  
+  .titulo {
+    font-family: 'Mattone', serif;
+    font-size: 120px;
+    font-weight: bold;
+    background-image: url("../img/peito.jpg");
+    background-size: cover;
+    background-position: center;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+  }
+  
+  .navbar ul li a {
+    color: #EAEAEA;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 15px;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #FFD700;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+  }
+  
+  .navbar ul li a:hover {
+    color: #FFD700;
+  }
+  
+  .navbar ul li a:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .New ul li a::after {
+    background: #00BFFF;
+  }
+  
+  /* Conteúdo Principal */
+  .textointeiro {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+    line-height: 1.7;
+  }
+  
+  .titulo-armaduras {
+    color: #00BFFF;
+    font-size: 42px;
+    margin-bottom: 10px;
+  }
+  
+  .texto-armaduras {
+    font-size: 18px;
+    color: #CCC;
+    opacity: 0.9;
+    margin-bottom: 30px;
+  }
+  
+  /* Seções Frente e Trás */
+  .f, .t {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+  
+  .t {
+    flex-direction: row-reverse;
+  }
+  
+  .f img, .t img {
+    width: 40%;
+    max-width: 450px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 191, 255, 0.15);
+  }
+  
+  .texto-conteudo {
+    width: 60%;
+    color: #EAEAEA;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .texto-conteudo p {
+    margin-bottom: 12px;
+  }
+  
+  /* Considerações Finais */
+  .desc-f {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #DADADA;
+    text-align: justify;
+  }
+  
+  /* Rodapé */
+  .rodape {
+    background-color: #000;
+    color: #EAEAEA;
+    padding: 32px 16px;
+    text-align: center;
+    border-top: 2px solid #00BFFF;
+  }
+  
+  .collab-titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .collab-titulo span {
+    color: #00BFFF;
+    font-weight: bold;
+  }
+  
+  .logos-collab {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .logos-collab img {
+    height: 50px;
+    width: auto;
+  }
+  
+  .direitos {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  /* Botão de compra centralizado */
+  .botao-comprar {
+    background-color: #00BFFF;
+    color: #000000;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    margin: 30px auto;
+  }
+  
+  .botao-comprar:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    box-shadow: 0 0 15px #00BFFF;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .f, .t {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .texto-conteudo,
+    .f img,
+    .t img {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .titulo {
+      font-size: 72px;
+    }
+  }
+
+  ul a li{
+    text-decoration: none;
+    
+    
+  }
