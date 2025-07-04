@@ -199,26 +199,32 @@
   
   /* Botão de compra centralizado */
   .botao-comprar {
-    background-color: #00BFFF;
-    color: #000000;
-    border: none;
-    padding: 12px 25px;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    text-align: center;
-    display: block;
-    margin: 30px auto;
-  }
+  background-color: #00BFFF;
+  color: #000000;
+  border: none;
+  padding: 12px 25px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  margin: 30px auto;
+  text-decoration: none;
+}
+
+.botao-comprar:hover {
+  background-color: #FFFFFF;
+  color: #000000;
+  box-shadow: 0 0 15px #00BFFF;
+}
   
-  .botao-comprar:hover {
-    background-color: #FFFFFF;
-    color: #000000;
-    box-shadow: 0 0 15px #00BFFF;
-  }
-  
+.botao-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
   /* Responsivo */
   @media (max-width: 768px) {
     .f, .t {
@@ -243,3 +249,4 @@
     
     
   }
+ 
